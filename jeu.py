@@ -12,7 +12,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocke
 
 
 async def choix_pays():
-    conn = sqlite3.connect('fichiers/nsi.db')
+    try:
+        conn = sqlite3.connect('fichiers/nsi.db')
+    except:
+        chemin_absolu = os.path.dirname(os.path.abspath(__file__))
+        conn = sqlite3.connect(chemin_absolu + '/fichiers/nsi.db')
     cursor = conn.cursor()
     cursor.execute("SELECT pays,Gdrapeaux FROM flags")
     r = cursor.fetchall()
