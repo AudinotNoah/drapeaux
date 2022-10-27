@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu des drapeaux</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <img class="drapeau" id="image" src="">
@@ -16,61 +17,4 @@
         <button class="btn-4" id="reponse4" onclick="choix('r4')">Réponse 4</button>
     </div>
 </body>
-
-
-
-
-<script>
-    const socket = new WebSocket('ws://localhost:8001');
-    var num_v = 0;
-    var num_j = 0;
-    var repp = '';
-
-
-
-    choix = function(rep) {
-        socket.send(JSON.stringify({"action":"jeux","valeur":rep}));
-        repp = rep
-    }
-
-    commencer = function() {
-        socket.send(JSON.stringify({"action":"commencer"}));
-        num_j = num_j + 1;
-        for (let i = 1; i < 5; i++) {document.getElementById("reponse"+i).style.background='#33ACFF';}
-    }
-
-
-    socket.onopen = function() {
-        var t = setInterval(function() {
-            socket.send(JSON.stringify({
-                "action": "vivant",
-                "valeur":""
-            }));
-        }, 55000);
-        commencer();
-    };
-
-    socket.onmessage = function(event) {
-        var reponse = JSON.parse(event.data);
-        if (reponse['action'] == 'jeux_question'){
-            document.getElementById("image").src = reponse['valeur']['lien']
-            for (let i = 1; i < 5; i++) {document.getElementById("reponse"+i).innerText = reponse['valeur']['r'+i];}
-        };
-        if (reponse['action'] == 'jeux_reponse'){
-            if (reponse['valeur'] == repp){
-                num_v = num_v + 1         
-            }
-            for (let i = 1; i < 5; i++) { document.getElementById("reponse"+i).style.background='#FF0000';}   
-            document.getElementById("reponse"+reponse['valeur'].slice(1)).style.background='#00FF00';
-            setTimeout(() => { commencer(); }, 1500); 
-
-        }
-        //document.getElementById('vf').innerText = num_v + "/" + num_j + "parties gagnées.";
-
-
-    }
-
-</script>
-
-
 </html>
