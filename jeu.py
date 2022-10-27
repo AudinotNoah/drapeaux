@@ -64,9 +64,14 @@ async def handler(websocket):
 
 
 async def main():
-    async with websockets.serve(handler, "", 8001):
+    async with websockets.serve(handler, "", 443):
         await asyncio.Future()  # run forever
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except:
+        #pour les versions en dessous de 3.7
+        loop = asyncio.get_event_loop()
+        result = loop.run_until_complete(main())
