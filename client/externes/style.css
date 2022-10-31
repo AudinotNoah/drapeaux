@@ -1,0 +1,132 @@
+
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 4px;
+}
+
+body {
+    background-color: #25252A;
+    color: #42FBF2;
+
+}
+.test {
+    position: absolute;
+    top: 25px;        
+    left: 25px;       
+}
+
+
+.tableau  {
+    border-collapse: collapse;
+    margin: 0px auto;
+    border: 2px solid #08095e;
+    text-align: center;
+    color: #fff;
+    background-color: #1f1f24;
+}
+.score {
+    position: absolute;
+    top: 175px;        
+    right: 15px; 
+    text-align: center;
+    font-size: 25px;
+    color: #42FBF2;
+}
+
+th, td {
+    padding: 5px 10px;
+}
+
+
+.container {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    min-height: 20vh;
+}
+
+
+.scorepartie {
+    position: absolute;
+    top: 400px;
+    right: 125px;
+}
+
+.logo {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.play-button {
+    background-color: #25252A;
+    color: #42FBF2;
+    width: 300px;
+    height: 50px;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid #42FBF2;
+    position: relative;
+    z-index: 1;
+    transition: ease-out 0.3s;
+    font-size: x-large;
+    outline: none;
+}
+
+
+.play-button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+
+.play-button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: #42FBF2;
+}
+
+.play-button:hover:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+.drapeau {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.btn {
+    width: 300px;
+    height: 50px;
+    margin: 25px;
+    border: none;
+    color: white;
+    background-color: #33ACFF;
+    border-radius: 4px;
+    font-size: medium;
+    transition: .3s ease;
+    text-align: center;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.3);
+}
