@@ -1,5 +1,5 @@
 let lien_socket = 'ws://141.145.193.207:443'
-const socket = new WebSocket('ws://localhost:443');
+const socket = new WebSocket(lien_socket);
 let num_v = 0;
 let num_j = 0;
 let repp = '';
