@@ -16,7 +16,7 @@ async def envoie(websocket,message):
 
 async def sql():
     chemin_absolu = os.path.dirname(os.path.abspath(__file__))
-    conn = sqlite3.connect(chemin_absolu + '/petite.db')
+    conn = sqlite3.connect(chemin_absolu + '/nsi.db')
     cursor = conn.cursor()
     cursor.execute("SELECT pays,Gdrapeaux FROM flags")
     r = cursor.fetchall()
