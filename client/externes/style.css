@@ -16,27 +16,15 @@ body {
 }
 
 
-.tableau  {
-    border-collapse: collapse;
-    margin: 0px auto;
-    border: 2px solid #08095e;
-    text-align: center;
-    color: #fff;
-    background-color: #1f1f24;
-}
+
 .score {
     position: absolute;
     top: 175px;        
-    right: 15px; 
+    right: 175px; 
     text-align: center;
     font-size: 25px;
     color: #42FBF2;
 }
-
-th, td {
-    padding: 5px 10px;
-}
-
 
 .container {  
     display: flex;
@@ -47,12 +35,6 @@ th, td {
     min-height: 20vh;
 }
 
-
-.scorepartie {
-    position: absolute;
-    top: 400px;
-    right: 125px;
-}
 
 .logo {
     width: 300px;
