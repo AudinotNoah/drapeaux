@@ -58,6 +58,6 @@ socket.onmessage = function(event) {
         }, 1500);
 
     }
-    document.getElementById('vf').innerText = num_v + "/ 221 pays trouvés.\n"+num_v+" ✔️ et " + (num_j-num_v) + " ❌";
+    document.getElementById('vf').innerText = num_v+" ✔️ et " + (num_j-num_v) + " ❌";
 
 }
