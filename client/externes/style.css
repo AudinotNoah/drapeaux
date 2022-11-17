@@ -20,7 +20,7 @@ body {
 .score {
     position: absolute;
     top: 175px;        
-    right: 175px; 
+    right: 15px; 
     text-align: center;
     font-size: 25px;
     color: #42FBF2;
